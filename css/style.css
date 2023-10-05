@@ -26,3 +26,16 @@ main {
 .offcanvas-top{
     height: fit-content;
 }
+h3{
+    color: white;
+}
+em{
+    color:rgb(197, 197, 197);
+}
+.name-description{
+    width: 80%;
+}
+li{
+    display: flex;
+    justify-content: space-evenly;
+}
