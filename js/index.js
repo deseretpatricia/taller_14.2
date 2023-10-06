@@ -2,6 +2,13 @@ const apiUrl =  'https://japceibal.github.io/japflix_api/movies-data.json'
 const lista = document.getElementById('lista')
 const btnBuscar = document.getElementById('btnBuscar')
 const userSearch = document.getElementById('inputBuscar')
+const moreInfoTitle = document.getElementById('more-info-title')
+const moreInfoOverview = document.getElementById('more-info-overview')
+const moreInfoGenres = document.getElementById('more-info-genres')
+const moreInfoYear = document.getElementById('more-info-year')
+const moreInfoRuntime = document.getElementById('more-info-runtime')
+const moreInfoBudget = document.getElementById('more-info-budget')
+const moreInfoRevenue = document.getElementById('more-info-revenue')
 let miListadoDeDatos
 
 fetch(apiUrl)    
@@ -18,10 +25,6 @@ fetch(apiUrl)
     .catch(error =>{
         console.log('error', error);
     });
-    
-function showMoreInfo (movie){
-    console.log(movie)
-}
 
 function addMovies (moviesList){
     lista.innerHTML = '';
@@ -40,7 +43,7 @@ function addMovies (moviesList){
             }
             commentSection.appendChild(star)
         }
-        element.innerHTML = `<section class='name-description'>
+        element.innerHTML = `<section class='name-description' data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
             <h3>${movie.title}</h3> 
             <em>${movie.overview}</em>
         </section>`
@@ -59,3 +62,14 @@ function searchMovies (){
     addMovies(resultados)
 }
  btnBuscar.addEventListener('click', searchMovies);
+
+ function showMoreInfo (movie){
+    moreInfoTitle.innerHTML = movie.title
+    moreInfoOverview.innerHTML = movie.overview
+    moreInfoGenres.innerHTML = movie.genres.map(genre => genre.name).join(' - ')
+    moreInfoYear.innerHTML = movie.release_date.slice(0, 4)
+    moreInfoRuntime.innerHTML = movie.runtime 
+    moreInfoBudget.innerHTML = movie.budget
+    moreInfoRevenue.innerHTML = movie.revenue
+    console.log(movie)
+}

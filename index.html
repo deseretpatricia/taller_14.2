@@ -13,6 +13,34 @@
 </head>
 
 <body class="bg-dark">
+
+  <sectiom data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</sectiom>
+
+  <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="more-info-title">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="more-info-title">Offcanvas top</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p id="more-info-overview"></p>
+    </div>
+    <hr />
+    <div class="offcanvas-footer">
+      <p id="more-info-genres"></p>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu p-3">
+          <li><p class="dropdown-item" href="#">Year:</p> <em id="more-info-year"></em></li>
+          <li><p class="dropdown-item" href="#">Runtime:</p><em id="more-info-runtime"></em></li>
+          <li><p class="dropdown-item" href="#">Budget:</p><em id="more-info-budget"></em></li>
+          <li><p class="dropdown-item" href="#">Revenue:</p><em id="more-info-revenue"></em></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <main>
     <div class="text-center container">
       <div class="row py-lg-3">
